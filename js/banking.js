@@ -1,11 +1,22 @@
+function getInputValue() {
+  const depositInput = document.getElementById("deposit-input");
+  const depositAmountText = depositInput.value;
+  const depositAmount = parseFloat(depositAmountText);
+  // clear input field
+  depositInput.value = "";
+  return depositAmount;
+}
+
 // handle deposit button event
 document
   .getElementById("deposit-button")
   .addEventListener("click", function () {
     // get the amount deposited
-    const depositInput = document.getElementById("deposit-input");
-    const newDepositAmountText = depositInput.value;
-    const newDepositAmount = parseFloat(newDepositAmountText);
+    // const depositInput = document.getElementById("deposit-input");
+    // const newDepositAmountText = depositInput.value;
+    // const newDepositAmount = parseFloat(newDepositAmountText);
+
+    const depositAmount = getInputValue();
 
     // update deposit total
     const depositTotal = document.getElementById("deposit-total");
